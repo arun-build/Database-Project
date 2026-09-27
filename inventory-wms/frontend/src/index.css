@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-dark-200;
+  }
+  
+  body {
+    @apply bg-dark-50 text-dark-900 antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 focus:ring-primary-500 shadow-primary-500/20 hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-white text-dark-700 border border-dark-200 hover:bg-dark-50 hover:text-dark-900 focus:ring-dark-400;
+  }
+  
+  .btn-danger {
+    @apply btn bg-rose-600 text-white hover:bg-rose-700 active:bg-rose-800 focus:ring-rose-500;
+  }
+  
+  .btn-outline {
+    @apply btn border border-dark-300 bg-white text-dark-700 hover:bg-dark-50 hover:border-dark-400 focus:ring-primary-500;
+  }
+  
+  .btn-ghost {
+    @apply btn bg-transparent text-dark-600 hover:bg-dark-100 hover:text-dark-900 focus:ring-dark-400 shadow-none;
+  }
+  
+  .input {
+    @apply w-full px-3.5 py-2 text-sm border border-dark-300 rounded-lg bg-white text-dark-900 placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-600 transition-all duration-200 shadow-sm;
+  }
+  
+  .input-error {
+    @apply border-red-500 focus:ring-red-500/20 focus:border-red-500;
+  }
+  
+  .label {
+    @apply block text-xs font-semibold uppercase tracking-wider text-dark-600 mb-1.5;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-card border border-dark-100/90 overflow-hidden transition-all duration-200;
+  }
+  
+  .card-header {
+    @apply px-6 py-4 border-b border-dark-100 bg-white;
+  }
+  
+  .card-body {
+    @apply p-6;
+  }
+  
+  .card-footer {
+    @apply px-6 py-3.5 border-t border-dark-100 bg-dark-50/70;
+  }
+  
+  .table-container {
+    @apply overflow-x-auto;
+  }
+  
+  .table {
+    @apply w-full text-sm text-left;
+  }
+  
+  .table th {
+    @apply px-4 py-3 font-semibold text-xs text-dark-500 uppercase tracking-wider bg-dark-50/80 border-b border-dark-100;
+  }
+  
+  .table td {
+    @apply px-4 py-3.5 border-b border-dark-100/70 text-dark-800 text-sm align-middle;
+  }
+  
+  .table tbody tr {
+    @apply hover:bg-dark-50/60 transition-colors duration-150;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide;
+  }
+  
+  .badge-success {
+    @apply badge bg-emerald-50 text-emerald-700 border border-emerald-200/80;
+  }
+  
+  .badge-warning {
+    @apply badge bg-amber-50 text-amber-700 border border-amber-200/80;
+  }
+  
+  .badge-danger {
+    @apply badge bg-rose-50 text-rose-700 border border-rose-200/80;
+  }
+  
+  .badge-info {
+    @apply badge bg-blue-50 text-blue-700 border border-blue-200/80;
+  }
+  
+  .badge-gray {
+    @apply badge bg-dark-100 text-dark-700 border border-dark-200;
+  }
+  
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3.5 py-2.5 text-sm font-medium text-dark-400 rounded-xl transition-all duration-150 hover:bg-dark-800 hover:text-white;
+  }
+  
+  .sidebar-link-active {
+    @apply bg-primary-600 text-white font-semibold shadow-md shadow-primary-600/30 hover:bg-primary-600 hover:text-white;
+  }
+  
+  .page-header {
+    @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6;
+  }
+  
+  .page-title {
+    @apply text-2xl font-bold tracking-tight text-dark-900;
+  }
+  
+  .page-subtitle {
+    @apply text-sm text-dark-500 mt-0.5;
+  }
+  
+  .stat-card {
+    @apply card p-5 hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200;
+  }
+  
+  .modal-overlay {
+    @apply fixed inset-0 bg-dark-950/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-200;
+  }
+  
+  .modal {
+    @apply bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-dark-100 transform transition-all duration-200;
+  }
+  
+  .modal-header {
+    @apply flex items-center justify-between px-6 py-4 border-b border-dark-100;
+  }
+  
+  .modal-title {
+    @apply text-lg font-bold text-dark-900;
+  }
+  
+  .modal-body {
+    @apply p-6 space-y-4;
+  }
+  
+  .modal-footer {
+    @apply flex items-center justify-end gap-3 px-6 py-4 border-t border-dark-100 bg-dark-50/80;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.dark.300') transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.dark.300');
+    border-radius: 4px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: theme('colors.dark.400');
+  }
+}
